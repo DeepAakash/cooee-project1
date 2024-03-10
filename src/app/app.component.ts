@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cooee-project1';
+
+  // To toggle Welcome and Login Feature
+  showMenu: boolean=true;
 }

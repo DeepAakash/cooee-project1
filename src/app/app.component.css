@@ -1,0 +1,28 @@
+.cooee-logo{
+    width: 124px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.icons mat-icon, .icons div {
+    cursor: pointer;
+}
+
+.login-logout{
+    width: 115px;
+    height: 35px;
+    border-style: solid;
+    border-radius: 30px;
+    border-color: #f51c8f;
+    background-color: rgba(0, 31, 206, 0);
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 16px 22px;
+    top: 0;
+    font-size: 14px;
+    justify-content: center;
+    font-weight: 900;
+    color: #f51c8f;
+}

@@ -1,1 +1,48 @@
-<p>home works!</p>
+<mat-card>
+    <mat-card-header></mat-card-header>
+  
+    <mat-card-content>
+      
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        
+            <ng-container matColumnDef="DateTime">
+                <th mat-header-cell *matHeaderCellDef>Date-Time</th>
+                <td mat-cell *matCellDef="let element">{{element.DateTime}}</td>
+            </ng-container>
+        
+            <ng-container matColumnDef="ItemID">
+                <th mat-header-cell *matHeaderCellDef>Item ID</th>
+                <td mat-cell *matCellDef="let element">{{element.ItemID}}</td>
+            </ng-container>
+        
+            <ng-container matColumnDef="ItemName">
+                <th mat-header-cell *matHeaderCellDef>Item Name</th>
+                <td mat-cell *matCellDef="let element">{{element.ItemName}}</td>
+            </ng-container>
+        
+            <ng-container matColumnDef="ViewCount">
+                <th mat-header-cell *matHeaderCellDef>View Item</th>
+                <td mat-cell *matCellDef="let element">{{element.ViewCount}}</td>
+            </ng-container>
+        
+            <ng-container matColumnDef="AddToCartCount">
+                <th mat-header-cell *matHeaderCellDef>Add To Cart</th>
+                <td mat-cell *matCellDef="let element">{{element.AddToCartCount}}</td>
+            </ng-container>
+        
+            <ng-container matColumnDef="PurchaseCount">
+                <th mat-header-cell *matHeaderCellDef>Purchase</th>
+                <td mat-cell *matCellDef="let element">{{element.PurchaseCount}}</td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+    </mat-card-content>
+    <br>
+
+    <mat-card-footer>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </mat-card-footer>
+  
+  </mat-card>
