@@ -15,6 +15,9 @@ export class HomeComponent {
   dataSource: any;
   displayedColumns: string[] = ['DateTime', 'ItemID', 'ItemName', 'ViewCount', 'AddToCartCount', 'PurchaseCount'];
 
+  // To hide/unhide Create Event option
+  showCreate: boolean=true;
+
   // For pagination feature
   @ViewChild(MatPaginator) paginator !: MatPaginator;
 
@@ -30,6 +33,7 @@ export class HomeComponent {
     })
   }
 
+  // To implement search feature 
   FilterChange(data:any){
     const value=(data.target as HTMLInputElement).value;
     this.dataSource.filter=value;

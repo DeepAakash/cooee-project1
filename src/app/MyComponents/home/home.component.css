@@ -1,4 +1,4 @@
-mat-card{
+.mat-card{
     margin: 2%;
 }
 
@@ -11,6 +11,26 @@ th{
     color: white;
 }
 
+.spacer {
+    flex: 1 1 auto;
+}
+
 .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(.mat-mdc-option-multiple) {
     background-color: #000;
+}
+
+.create{
+    width:185px;
+    height: 40px;
+    border-style: solid;
+    border-radius: 30px;
+    border-color: #f51c8f;
+    background-color: #f51c8f;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 16px 22px;
+    font-size: 14px;
+    justify-content: center;
+    font-weight: 900;
+    color: #ffffff;
 }
