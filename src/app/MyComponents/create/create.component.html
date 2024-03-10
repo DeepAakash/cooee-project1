@@ -1,1 +1,46 @@
-<p>create works!</p>
+<mat-card>
+    <mat-card-header></mat-card-header>
+    <mat-card-content>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h3 class="modal-header text-center">Create New Event</h3>
+          </div>
+          <div class="col-12">
+            <div class="d-flex flex-column flex-grow-1 py-4">
+              <mat-form-field appearance="fill">
+                <mat-label class="custom-label">Event Name</mat-label>
+                <input matInput name="name" [(ngModel)]="name" [value]="name">
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="fill">
+                <mat-label class="custom-label">Occurred</mat-label>
+                <textarea matInput name="occurred" [(ngModel)]="occurred" [value]="occurred"></textarea>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="fill">
+                <mat-label class="custom-label">Device</mat-label>
+                <textarea matInput name="device" [(ngModel)]="device" [value]="device"></textarea>
+              </mat-form-field>
+              <br>
+              <hr>
+              <mat-form-field appearance="fill">
+                <mat-label class="custom-label">ID</mat-label>
+                <textarea matInput name="id" [(ngModel)]="item.id" [value]="item.id"></textarea>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="fill">
+                <mat-label class="custom-label">Name</mat-label>
+                <textarea matInput name="name" [(ngModel)]="item.name" [value]="item.name"></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="submit-container">
+        <button class="submit" (click)="create()">Submit</button>
+      </div>
+    </mat-card-content>
+    <mat-card-footer></mat-card-footer>
+  </mat-card>
+  
