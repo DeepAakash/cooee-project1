@@ -61,8 +61,6 @@ export class CreateComponent implements OnInit {
         this.toastr.error(error.error.message.join(', '), 'Error');
       }
     );
-
-    return eventForm.reset();
   }
 
   // Validate date in frontend first

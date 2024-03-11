@@ -16,10 +16,6 @@ mat-card {
   justify-content: center;
   align-items: center;
 }
-
-.custom-textarea {
-  height: 200px;
-}
   
 .submit-container {
     display: flex;
