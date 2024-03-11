@@ -9,7 +9,7 @@ interface Item {
 }
 
 enum Name {
-  'View Items' = 'View Items',
+  'View Item' = 'View Item',
   'Add To Cart' = 'Add To Cart',
   'Purchase' = 'Purchase',
 }
