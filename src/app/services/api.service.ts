@@ -16,4 +16,18 @@ export class ApiService {
   getTable(): Observable<AggrEvent[]>{
     return this.http.get<AggrEvent[]>(`${this.API_URL}/item-report`);
   }
+
+  create(device: string, name: string, occurred: Date, itemId: string, itemName: string): Observable<any> {
+    const payload = {
+      device: device,
+      name: name,
+      occurred: occurred,
+      item: {
+        id: itemId,
+        name: itemName
+      }
+    };
+    // console.log(payload);
+    return this.http.post(`${this.API_URL}/event`, payload);
+  }
 }
