@@ -4,131 +4,142 @@ mat-card {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2%;
-}
-
-.wrapper {
+  }
+  
+  .wrapper {
     display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
-    min-height: 100%;
     padding: 20px;
-}
-
-.login {
-    border-radius: 2px 2px 5px 5px;
-    padding: 10px 20px 20px 20px;
+  }
+  
+  .login {
+    border-radius: 10px;
+    padding: 35px 20px 50px 20px;
     width: 100%;
     max-width: 400px;
     background: #ffffff;
     position: relative;
-    padding-bottom: 80px;
     box-shadow: 0px 8px 40px #ffe3f2;
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-
-
-.title{
+    margin-bottom: 20px;
+  }
+  
+  .title {
     font-weight: bold;
     margin: 20px 0 20px 0;
+    display: inline;
+  }
+  
+  .input-group {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.login input {
-    display: block;
+  }
+  
+  .input-group input {
     padding: 15px 10px;
-    margin-bottom: 10px;
+    margin: 5px 0 20px 0;
     width: 90%;
     border: 1px solid #ddd;
     transition: border-width 0.2s ease;
-    border-radius: 2px;
+    border-radius: 20px !important;
     color: #ccc;
   }
   
-  .login input + i.fa {
-    color: #fff;
-    font-size: 1em;
+  .lock {
+    font-size: 1.75rem;
+    margin-left: 10px;
+  }
+  
+  .input-group mat-icon {
     position: absolute;
-    margin-top: -47px;
+    top: 42%;
+    left: 25px;
+    transform: translateY(-50%);
     opacity: 0;
-    left: 0;
-    transition: all 0.1s ease-in;
+    transition: opacity 0.3s ease;
   }
   
-  .login input:focus + i.fa {
-    opacity: 1;
-    left: 30px;
-    transition: all 0.25s ease-out;
-  }
-  
-  .login input:focus {
+  .input-group input:focus {
     outline: none;
     color: #444;
     border-color: #f51c8f;
     border-left-width: 35px;
   }
   
-  .login a {
-    font-size: 0.8em;
-    color: #2196f3;
-    text-decoration: none;
+  .input-group input:focus + mat-icon {
+    opacity: 1;
   }
   
-  .login button {
-    width: 100%;
-    padding: 10px 10px;
-    background: #2196f3;
-    color: #fff;
-    display: block;
-    border: none;
-    margin-top: 20px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    max-height: 60px;
-    border: 0px solid rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 2px 2px;
-    transform: rotateZ(0deg);
-    transition: all 0.1s ease-out;
-    border-bottom-width: 7px;
-  }
-  
-  .login button .spinner {
-    display: block;
-    width: 40px;
+  .submit {
+    display: flex;
+    width: 155px;
     height: 40px;
-    position: absolute;
-    border: 4px solid #ffffff;
-    border-top-color: rgba(255, 255, 255, 0.3);
-    border-radius: 100%;
-    left: 50%;
-    top: 0;
-    opacity: 0;
-    margin-left: -20px;
-    margin-top: -20px;
-    animation: spinner 0.6s infinite linear;
-    transition: top 0.3s 0.3s ease, opacity 0.3s 0.3s ease, border-radius 0.3s ease;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
-  }
-  
-  .login:not(.loading) button:hover {
-    box-shadow: 0px 1px 3px #2196f3;
-  }
-  
-  .login:not(.loading) button:focus {
-    border-bottom-width: 4px;
+    border-style: solid;
+    border-radius: 30px;
+    border-color: #f51c8f;
+    background-color: #f51c8f;
+    padding: 16px 22px;
+    font-size: 14px;
+    font-weight: 900;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
   }
 
-/* Define keyframes outside the .login class */
-@keyframes spinner {
-    0% {
-        transform: rotateZ(0deg);
+  hr {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #f51c8f;
+  }
+  
+
+/* For screen size 768px */
+@media (max-width: 768px) {
+    mat-card{
+        width: 80%
     }
-    100% {
-        transform: rotateZ(359deg);
+    .login {
+      padding: 25px 15px 40px 15px;
     }
-}
+  
+    .input-group input {
+      padding: 12px 8px;
+      margin: 5px 0 15px 0;
+      width: 100%;
+    }
+  
+    .input-group mat-icon {
+      left: 10px;
+    }
+  }
+  
+  /* For screen size 480px */
+  @media (max-width: 480px) {
+    .login {
+      padding: 20px;
+    }
+  
+    .input-group input {
+      padding: 10px 5px;
+      margin: 5px 0 10px 0;
+      width: 100%;
+    }
+  
+    .lock {
+      font-size: 1.5rem;
+      margin-left: 8px;
+    }
+  
+    .input-group mat-icon {
+      left: 5px;
+    }
+  }
+  

@@ -40,6 +40,15 @@ mat-card {
     margin-bottom: 40px;
 }
 
+hr {
+  width: 95%;
+  margin: 20px auto;
+  border: 0;
+  border-top: 1px solid #f51c8f;
+  justify-content: center;
+  align-items: center;
+}
+
 
 @media (max-width: 768px) {
   mat-card {
