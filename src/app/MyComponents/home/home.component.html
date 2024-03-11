@@ -9,7 +9,7 @@
     
             <!-- For Create New Event Button  -->
             <div class="d-flex justify-content-around" *ngIf="showCreate" style="align-items: center; cursor: pointer;">
-                <div class="d-flex align-items-center mr-2 px-2 create">
+                <div class="d-flex align-items-center mr-2 px-2 create"  *ngIf="!showCreate">
                     <mat-icon routerLink="/create">add </mat-icon>
                     <span routerLink="/create"> Create New Event </span>
                 </div>

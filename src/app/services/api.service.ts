@@ -28,6 +28,7 @@ export class ApiService {
     return this.jwtToken$.asObservable();
   }
 
+  // get the table as an array 
   getTable(): Observable<AggrEvent[]>{
     return this.http.get<AggrEvent[]>(`${this.API_URL}/item-report`);
   }
@@ -39,7 +40,7 @@ export class ApiService {
         this.token = res.token;
         if(this.token){
           this.toast.success('Login successful, redirecting now...', '', {
-            timeOut: 700,
+            timeOut: 1000,
             positionClass: 'toast-top-center'
           }).onHidden.toPromise().then(() => {
             this.jwtToken$.next(this.token);
@@ -59,6 +60,7 @@ export class ApiService {
       });
   }
 
+  // Create new event 
   create(device: string, name: string, occurred: Date, itemId: string, itemName: string): Observable<any> {
     const payload = {
       device: device,
@@ -73,4 +75,16 @@ export class ApiService {
     return this.http.post(`${this.API_URL}/event`, payload);
   }
 
+  // Logout from Current User 
+  logout() {
+    this.token = '';
+    this.jwtToken$.next(this.token);
+    this.toast.success('Logged out succesfully', '', {
+      timeOut: 2000
+    }).onHidden.subscribe(() => {
+      localStorage.removeItem('act');
+      this.router.navigateByUrl('/').then();
+    });
+    return '';
+  }
 }

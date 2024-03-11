@@ -11,14 +11,12 @@
       </div>
     </div>
 
-    <div class="d-flex justify-content-around icons align-items-center" *ngIf="!showMenu" style="align-items: center;">
+    <div class="d-flex justify-content-around icons align-items-center" style="width: 100px;" *ngIf="!showMenu">
       <div class="px-2">
-        <h3 class="welcome" style="font-weight: 900;">Welcome, TOM</h3>
+        <h3>Welcome, {{username | titlecase}}</h3>
+        <!-- <mat-icon routerLink="/register">logout</mat-icon> -->
       </div>
-      <div class="d-flex align-items-center mr-2 px-2 login-logout">
-        <span routerLink="/logout">Logout</span>
-        <mat-icon routerLink="/logout">logout</mat-icon>
-      </div>
+      <mat-icon style="overflow: visible" (click)="logout()">logout</mat-icon>
     </div>
   </div>
 </mat-toolbar>
