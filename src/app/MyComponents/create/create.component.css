@@ -10,11 +10,25 @@ mat-card {
     margin-bottom: 2%;
 }
 
-.form-content{
-  width: 100%;
+.wrapper {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.form-content{
+  border-radius: 10px;
+  padding: 35px 20px 50px 20px;
+  width: 100%;
+  max-width: 550px;
+  background: #ffffff;
+  position: relative;
+  box-shadow: 0px 8px 40px #ffe3f2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
   
 .submit-container {

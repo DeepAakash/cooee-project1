@@ -72,7 +72,11 @@ export class ApiService {
       }
     };
     // console.log(payload);
-    return this.http.post(`${this.API_URL}/event`, payload);
+    return this.http.post(`${this.API_URL}/event`, payload, {
+      headers:{
+        Authorization: `Bearer ${this.token}`
+      }
+    });
   }
 
   // Logout from Current User 
