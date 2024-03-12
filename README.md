@@ -22,11 +22,11 @@ To install all the importnat dependencies
   npm i
 ```
 
-## Deployment
+## Running the app
 
 
 
-To deploy this project on your localhost
+To run this project on your localhost
 ```bash
   ng serve
 ```
