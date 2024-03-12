@@ -52,10 +52,20 @@ NOTE: The application will automatically reload if you change any of the source 
 - ngx-toastr for displaying user-friendly toast notifications.
 - jwt-decode for decoding JWT tokens.
 
+
 ## Future Scope
 - Implementation of update and delete features on the table
 - Implementation of pagination in the in NestJS instead of Angular for huge data sets
 - Implementation of search functionality in NestJS instead of Angular, for optimal load time in cases of huge data sets.
+
+## Backend Repository
+
+The backend services for this project are implemented in a separate repository. You can find the backend codebase and documentation at the following link:
+
+- [Backend Repository](https://github.com/DeepAakash/cooee-project1-api)
+
+Feel free to explore the backend repository for more details on the server-side implementation.
+
 
 ## Further help
 
