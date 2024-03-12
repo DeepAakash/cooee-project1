@@ -30,6 +30,10 @@ mat-card {
   flex-direction: column;
   margin-bottom: 20px;
 }
+
+.formInput{
+  width: 90%;
+}
   
 .submit-container {
     display: flex;
@@ -53,6 +57,12 @@ mat-card {
     align-items: center;
     margin-bottom: 40px;
 }
+
+.submit:disabled {
+  background-color: #f275a5; /* Disabled button color */
+  cursor: not-allowed;
+}
+
 
 hr {
   width: 95%;

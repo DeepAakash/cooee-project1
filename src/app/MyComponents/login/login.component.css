@@ -92,6 +92,11 @@ mat-card {
     margin-top: 20px;
   }
 
+  .submit:disabled {
+    background-color: #f275a5; /* Disabled button color */
+    cursor: not-allowed;
+  }
+
   hr {
     width: 100%;
     margin-top: 20px;

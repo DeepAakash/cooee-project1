@@ -12,7 +12,7 @@
               <hr>
               <div class="col-12">
                 <div class="d-flex flex-column flex-grow-1 py-4">
-                  <mat-form-field>
+                  <mat-form-field class="formInput">
                     <mat-label class="custom-label">Event Name</mat-label>
                     <mat-select name="name" [(ngModel)]="name" [value]="name" required>
                       <mat-option value="Add To Cart">Add To Cart</mat-option>
@@ -21,22 +21,22 @@
   
                     </mat-select>
                   </mat-form-field>
-                  <mat-form-field>
+                  <mat-form-field class="formInput">
                     <mat-label class="custom-label">Occurred</mat-label>
                     <textarea class="custom-textarea" matInput name="occurred" [(ngModel)]="occurred" [value]="occurred" placeholder="ISO 8601 Format: YYYY-MM-DDTHH:MM:SS.000Z" required></textarea>
                     <mat-error *ngIf="eventForm.controls['occurred']?.invalid && eventForm.controls['occurred']?.touched">Invalid date format</mat-error>
                   </mat-form-field>
-                  <mat-form-field>
+                  <mat-form-field class="formInput">
                     <mat-label class="custom-label">Device</mat-label>
                     <input matInput name="device" [(ngModel)]="device" [value]="device" required>
                   </mat-form-field>
                   
                   <h6>Item</h6>
-                  <mat-form-field>
+                  <mat-form-field class="formInput">
                     <mat-label class="custom-label">ID</mat-label>
                     <input matInput name="id" [(ngModel)]="item.id" [value]="item.id" required>
                   </mat-form-field>
-                  <mat-form-field>
+                  <mat-form-field class="formInput">
                     <mat-label class="custom-label">Name</mat-label>
                     <textarea class="custom-textarea" matInput name="itemName" [(ngModel)]="item.name" [value]="item.name" required></textarea>
                   </mat-form-field>
