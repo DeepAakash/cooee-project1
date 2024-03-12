@@ -29,8 +29,6 @@ export class CreateComponent implements OnInit {
     name: ''
   };
 
-  showButton: boolean=false;
-
   constructor(
     private formBuilder: FormBuilder,
     private apiService: ApiService,
@@ -41,6 +39,7 @@ export class CreateComponent implements OnInit {
     
   }
 
+  // Validations in frontend before sending data to backend
   create(eventForm: NgForm) {
     if (eventForm.invalid) {
       return;
@@ -51,9 +50,6 @@ export class CreateComponent implements OnInit {
       occurredControl.setErrors({ invalidDate: true });
       return;
     }
-
-    // console.log(eventForm.value);
-    // console.log(this.occurred);
 
     this.apiService.create(this.device, this.name, this.occurred, this.item.id, this.item.name)
     .subscribe(

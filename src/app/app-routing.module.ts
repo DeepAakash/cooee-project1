@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './MyComponents/home/home.component';
 import { LoginComponent } from './MyComponents/login/login.component';
 import { CreateComponent } from './MyComponents/create/create.component';
+import { AuthGuard } from './guards/auth.guard';
 
 // Declaring the useful routes
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   },
   {
     path: 'create',
-    component: CreateComponent
+    component: CreateComponent,
+    canActivate: [AuthGuard]    //Apply guard on create link
   },
   {
     path: '**',

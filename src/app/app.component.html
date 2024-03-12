@@ -6,17 +6,19 @@
     <span class="spacer"></span>
     <div class="d-flex justify-content-around icons" *ngIf="showMenu" style="align-items: center;">
       <div class="d-flex align-items-center mr-2 px-2 login-logout">
-        <span routerLink="/login">Login</span>
+        <span routerLink="/login">Login </span>
         <mat-icon routerLink="/login">login</mat-icon>
       </div>
     </div>
 
     <div class="d-flex justify-content-around icons align-items-center" style="width: 100px;" *ngIf="!showMenu">
       <div class="px-2">
-        <h3>Welcome, {{username | titlecase}}</h3>
-        <!-- <mat-icon routerLink="/register">logout</mat-icon> -->
+        <h3>Welcome</h3>
       </div>
-      <mat-icon style="overflow: visible" (click)="logout()">logout</mat-icon>
+      <div class="d-flex align-items-center mr-2 px-2 login-logout logout" (click)="logout()">
+        <span routerLink="/login">Logout </span>
+        <mat-icon routerLink="/logout">logout</mat-icon>
+      </div>
     </div>
   </div>
 </mat-toolbar>
