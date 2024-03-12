@@ -1,27 +1,63 @@
-# CooeeProject1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+# Cooee Project-1
 
-## Development server
+This project is the frontend application for a web app that provides insightful data analysis in a user-friendly tabular format. Users can easily search, sort, and paginate through the data, offering a seamless experience. The application is designed to allow anyone to view the data, while only logged-in members have the privilege to create new data entries.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## About Cooee
+[Cooee](https://www.letscooee.com/) is a cutting-edge tech company that specializes in using Machine Learning (ML) to optimize e-commerce brand conversions. They provide innovative solutions to empower businesses with actionable insights and data-driven strategies.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tech Stack
+- Angular version 16.2.12
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Dependencies and Installation
+- bootstrap@5.3.3
+- Angular Material
+- ngx-toastr
+- jwt-decode
 
-## Running unit tests
+To install all the importnat dependencies
+```bash
+  npm i
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Deployment
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+To deploy this project on your localhost
+```bash
+  ng serve
+```
+
+Navigate to http://localhost:4200/. 
+NOTE: The application will automatically reload if you change any of the source files.
+## Features
+
+- View data in a tabular format with ease.
+- Efficient search functionality to find specific data entries.
+- Dynamic sorting options for better data organization.
+- Pagination for seamless navigation through the data.
+- Create new data entries (available to logged-in members).
+
+
+## Validation
+- Frontend validation ensures data integrity by preventing empty field submissions.
+- Date fields are validated to ensure they are in ISO 8601 format.
+
+## Acknowledgements
+- This project uses Angular for frontend development.
+- Bootstrap and Angular Material for modern and responsive UI elements.
+- ngx-toastr for displaying user-friendly toast notifications.
+- jwt-decode for decoding JWT tokens.
+
+## Future Scope
+- Implementation of update and delete features on the table
+- Implementation of pagination in the in NestJS instead of Angular for huge data sets
+- Implementation of search functionality in NestJS instead of Angular, for optimal load time in cases of huge data sets.
 
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    
