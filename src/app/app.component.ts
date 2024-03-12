@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from './services/api.service';
 import { jwtDecode } from 'jwt-decode';
 import { Router } from '@angular/router';
+import { faTwitter, faLinkedin, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faMessage } from '@fortawesome/free-regular-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +12,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
+  // Initialising Fontawesome Icons
+  faTwitter= faTwitter;
+  faLinkedin= faLinkedin;
+  faYoutube= faYoutube;
+  faMessage= faMessage;
+  faGithub=faGithub;
+  faGlobe=faGlobe;
+
   title = 'cooee-project1';
 
   // To toggle Welcome and Login Feature
