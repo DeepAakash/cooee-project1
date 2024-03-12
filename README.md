@@ -16,6 +16,7 @@ This project is the frontend application for a web app that provides insightful 
 - Angular Material
 - ngx-toastr
 - jwt-decode
+- fontawesome
 
 To install all the importnat dependencies
 ```bash
