@@ -1,64 +1,83 @@
 <mat-card>
-    <mat-card-header>
-        <div class="container d-flex">
-            <!-- For Search Bar -->
-            <mat-form-field>
-                <input matInput (keyup)="FilterChange($event)" placeholder="Search">
-            </mat-form-field>
-            <span class="spacer"></span>
-    
-            <!-- For Create New Event Button  -->
-            <div class="d-flex justify-content-around" *ngIf="showCreate" style="align-items: center; cursor: pointer;">
-                <div class="d-flex align-items-center mr-2 px-2 create">
-                    <mat-icon routerLink="/create">add </mat-icon>
-                    <span routerLink="/create"> Create New Event </span>
-                </div>
-            </div>
-        </div>
-    </mat-card-header>
-  
-    <mat-card-content>
-      
-        <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
-        
-            <ng-container matColumnDef="DateTime">
-                <th mat-sort-header mat-header-cell *matHeaderCellDef>Date-Time</th>
-                <td mat-cell *matCellDef="let element">{{element.DateTime}}</td>
-            </ng-container>
-        
-            <ng-container matColumnDef="ItemID">
-                <th mat-header-cell *matHeaderCellDef>Item ID</th>
-                <td mat-cell *matCellDef="let element">{{element.ItemID}}</td>
-            </ng-container>
-        
-            <ng-container matColumnDef="ItemName">
-                <th mat-header-cell *matHeaderCellDef>Item Name</th>
-                <td mat-cell *matCellDef="let element">{{element.ItemName}}</td>
-            </ng-container>
-        
-            <ng-container matColumnDef="ViewCount">
-                <th mat-sort-header mat-header-cell *matHeaderCellDef>View Item</th>
-                <td mat-cell *matCellDef="let element">{{element.ViewCount}}</td>
-            </ng-container>
-        
-            <ng-container matColumnDef="AddToCartCount">
-                <th mat-header-cell *matHeaderCellDef>Add To Cart</th>
-                <td mat-cell *matCellDef="let element">{{element.AddToCartCount}}</td>
-            </ng-container>
-        
-            <ng-container matColumnDef="PurchaseCount">
-                <th mat-header-cell *matHeaderCellDef>Purchase</th>
-                <td mat-cell *matCellDef="let element">{{element.PurchaseCount}}</td>
-            </ng-container>
-        
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-        </table>
-    </mat-card-content>
-    <br>
+  <mat-card-header>
+    <div class="container d-flex">
+      <!-- For Search Bar -->
+      <mat-form-field>
+        <input matInput (keyup)="FilterChange($event)" placeholder="Search" />
+      </mat-form-field>
 
-    <mat-card-footer>
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-    </mat-card-footer>
-  
-  </mat-card>
+      <!-- For Filter by Item Name  -->
+      <mat-form-field class="filterByItemName">
+        <mat-label>Filter by Item Name</mat-label>
+        <mat-select
+          [(value)]="selectedItem"
+          (selectionChange)="onItemSelected($event.value)"
+        >
+        <mat-option value="">All</mat-option>
+          <mat-option *ngFor="let item of uniqueItemNames" [value]="item">{{
+            item
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <span class="spacer"></span>
+
+      <!-- For Create New Event Button  -->
+      <div
+        class="d-flex justify-content-around"
+        *ngIf="showCreate"
+        style="align-items: center; cursor: pointer"
+      >
+        <div class="d-flex align-items-center mr-2 px-2 create">
+          <mat-icon routerLink="/create">add </mat-icon>
+          <span routerLink="/create"> Create New Event </span>
+        </div>
+      </div>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="DateTime">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Date-Time</th>
+        <td mat-cell *matCellDef="let element">{{ element.DateTime }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ItemID">
+        <th mat-header-cell *matHeaderCellDef>Item ID</th>
+        <td mat-cell *matCellDef="let element">{{ element.ItemID }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ItemName">
+        <th mat-header-cell *matHeaderCellDef>Item Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.ItemName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ViewCount">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>View Item</th>
+        <td mat-cell *matCellDef="let element">{{ element.ViewCount }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="AddToCartCount">
+        <th mat-header-cell *matHeaderCellDef>Add To Cart</th>
+        <td mat-cell *matCellDef="let element">{{ element.AddToCartCount }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="PurchaseCount">
+        <th mat-header-cell *matHeaderCellDef>Purchase</th>
+        <td mat-cell *matCellDef="let element">{{ element.PurchaseCount }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </mat-card-content>
+  <br />
+
+  <mat-card-footer>
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </mat-card-footer>
+</mat-card>

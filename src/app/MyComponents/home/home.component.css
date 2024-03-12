@@ -23,6 +23,10 @@ h3{
     background-color: #000;
 }
 
+.filterByItemName{
+    margin-left: 50px;
+}
+
 .create{
     width:185px;
     height: 40px;

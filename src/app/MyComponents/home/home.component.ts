@@ -26,10 +26,17 @@ export class HomeComponent implements OnInit{
   aggrEventList!: AggrEvent[];
   dataSource: any;
   displayedColumns: string[] = ['DateTime', 'ItemID', 'ItemName', 'ViewCount', 'AddToCartCount', 'PurchaseCount'];
+  uniqueItemNames: string[] = [];
+  selectedItem: string = "";
 
   // To hide/unhide Create Event option
   showCreate: boolean=false;
   ngOnInit(): void {
+    // To get options for dreopdown feature 
+    this.apiService.getUniqueItemNames().subscribe(names => {
+      this.uniqueItemNames = names;
+    });
+
     this.apiService.jwtUserToken.subscribe(token => {
       if (token) {
         const decoded: any = jwtDecode(token);
@@ -59,4 +66,32 @@ export class HomeComponent implements OnInit{
     const value=(data.target as HTMLInputElement).value;
     this.dataSource.filter=value;
   }
+
+  // FILTER OPTION USING THE BACKEND
+  onItemSelected(itemName: string): void {
+    this.apiService.getTable(itemName).subscribe(
+      (response) => {
+        this.aggrEventList=response;
+        this.dataSource=new MatTableDataSource<AggrEvent>(this.aggrEventList);
+        // Handle success response if needed
+      },
+      (error) => {
+        console.error('Error sending item:', error);
+        // Handle error if needed
+      }
+    );
+  }
+
+
+
+  // ✨✨✨FILTER OPTION USING THE FRONTEND✨✨✨
+  // onItemSelected(item: string) {
+  //   if (item === "") {
+  //     // Show all items
+  //     this.dataSource.data = this.aggrEventList;
+  //   } else {
+  //     // Filter the data based on selected item
+  //     this.dataSource.data = this.aggrEventList.filter(event => event.ItemName === item);
+  //   }
+  // }
 }

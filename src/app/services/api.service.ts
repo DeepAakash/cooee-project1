@@ -28,9 +28,19 @@ export class ApiService {
     return this.jwtToken$.asObservable();
   }
 
-  // get the table as an array 
-  getTable(): Observable<AggrEvent[]>{
-    return this.http.get<AggrEvent[]>(`${this.API_URL}/item-report`);
+  // To get all the unique item names from collection itemReport to show as filter option 
+  getUniqueItemNames(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.API_URL}/item-report/unique`);
+  }
+
+  // get the table as an array based on/ without filter
+  getTable(itemName?: string): Observable<AggrEvent[]> {
+    let url = `${this.API_URL}/item-report`;
+    if (itemName) {
+      url += `?keyword=${itemName}`;
+      console.log(itemName);
+    }
+    return this.http.get<AggrEvent[]>(url);
   }
 
   // Login with toaster indicating login successful or fail 
