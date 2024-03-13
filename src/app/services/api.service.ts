@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ApiService {
-  private API_URL=environment.production ? environment.apiUrl : 'http://localhost:3000/api';
+  private API_URL='https://cooee-project1-api.vercel.app/api';
   private token = '';
   private jwtToken$ = new BehaviorSubject<string>(this.token);
 
