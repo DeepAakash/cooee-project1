@@ -55,33 +55,23 @@ export class HomeComponent implements OnInit{
     });
   }
 
-  // For pagination feature
-  @ViewChild(MatPaginator) paginator !: MatPaginator;
-
-  // For sorting feature
-  @ViewChild(MatSort) sort !: MatSort;
-
-  // To implement search feature 
-  FilterChange(data:any){
-    const value=(data.target as HTMLInputElement).value;
-    this.dataSource.filter=value;
-  }
-
   // FILTER OPTION USING THE BACKEND
   onItemSelected(itemName: string): void {
-    this.apiService.getTable(itemName).subscribe(
-      (response) => {
-        this.aggrEventList=response;
-        this.dataSource=new MatTableDataSource<AggrEvent>(this.aggrEventList);
-        // Handle success response if needed
-      },
-      (error) => {
-        console.error('Error sending item:', error);
-        // Handle error if needed
-      }
-    );
+    if (itemName === "") {
+      // If "All" is selected, show all items
+      this.dataSource.data = this.aggrEventList;
+    } else {
+      // Filter the data based on selected item
+      this.apiService.getTable(itemName).subscribe(
+        (response) => {
+          this.dataSource.data = response;
+        },
+        (error) => {
+          console.error('Error sending item:', error);
+        }
+      );
+    }
   }
-
 
 
   // ✨✨✨FILTER OPTION USING THE FRONTEND✨✨✨
@@ -94,4 +84,16 @@ export class HomeComponent implements OnInit{
   //     this.dataSource.data = this.aggrEventList.filter(event => event.ItemName === item);
   //   }
   // }
+
+  // To implement search feature 
+  FilterChange(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  // For pagination feature
+  @ViewChild(MatPaginator) paginator !: MatPaginator;
+
+  // For sorting feature
+  @ViewChild(MatSort) sort !: MatSort;
 }

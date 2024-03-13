@@ -8,10 +8,10 @@
 .cooee-logo {
   width: 124px;
 }
-
+/* 
 .spacer {
   flex: 1 1 auto;
-}
+} */
 
 .icons mat-icon,
 .icons div {
@@ -26,7 +26,7 @@
   border-color: #f51c8f;
   background-color: rgba(0, 31, 206, 0);
   margin-left: 10px;
-  margin-right: 100px !important;
+  margin-right: 20px !important;
   padding: 16px 22px !important;
   top: 0;
   font-size: 14px;
@@ -63,19 +63,10 @@
   }
 
   .login-logout {
-    margin-right: 50px !important;
+    /* margin-right: 5px !important; */
     font-size: 12px;
   }
 }
 
 @media screen and (max-width: 480px) {
-    .spacer{
-        display: none;
-    }
-    h3{
-        display: none;
-    }
-  .login-logout {
-    margin-right: 10px !important;
-  }
 }

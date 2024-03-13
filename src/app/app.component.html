@@ -1,7 +1,7 @@
 <!-- Header  -->
 
 <mat-toolbar class="fixed-toolbar">
-  <div class="container d-flex">
+  <div class="container d-flex" style="justify-content: space-between;">
     <span routerLink="/" style="cursor: pointer">
       <img
         class="cooee-logo"
@@ -26,9 +26,9 @@
       style="width: 100px"
       *ngIf="!showMenu"
     >
-      <div class="px-2">
+      <!-- <div class="px-2">
         <h3>Welcome</h3>
-      </div>
+      </div> -->
       <div
         class="d-flex align-items-center mr-2 px-2 login-logout logout"
         (click)="logout()"

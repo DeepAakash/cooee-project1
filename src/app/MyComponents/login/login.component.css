@@ -117,12 +117,16 @@ mat-card {
   
     .input-group input {
       padding: 12px 8px;
-      margin: 5px 0 15px 0;
+      margin: 5px 20px 15px 20px;
       width: 100%;
+    }
+
+    .input-group{
+      width: 90%;
     }
   
     .input-group mat-icon {
-      left: 10px;
+      left: 28px;
     }
   }
   
@@ -137,6 +141,10 @@ mat-card {
       margin: 5px 0 10px 0;
       width: 100%;
     }
+
+    .input-group mat-icon {
+      top: 46%;
+    }
   
     .lock {
       font-size: 1.5rem;
@@ -144,7 +152,7 @@ mat-card {
     }
   
     .input-group mat-icon {
-      left: 5px;
+      left: 7px;
     }
   }
   
