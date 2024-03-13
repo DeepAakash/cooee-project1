@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "dist/cooee-project1",
+        "use": "@vercel/static-build"
+      }
+    ],
+    "routes": [
+      { "src": "/api/(.*)", "dest": "https://cooee-project1-api.vercel.app/api/$1" },
+      { "src": "/(.*)", "dest": "/dist/cooee-project1/$1" }
+    ]
+  }
+  

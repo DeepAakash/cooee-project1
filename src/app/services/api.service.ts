@@ -4,12 +4,13 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { AggrEvent } from '../models/aggrEvent';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private API_URL='http://localhost:3000/api';
+  private API_URL=environment.apiUrl;
   private token = '';
   private jwtToken$ = new BehaviorSubject<string>(this.token);
 
