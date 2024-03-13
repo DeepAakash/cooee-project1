@@ -20,11 +20,11 @@ h3{
 }
 
 .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(.mat-mdc-option-multiple) {
-    background-color: #000;
+    background-color: #000 !important;
 }
 
 .filterByItemName{
-    margin-left: 50px;
+    margin: 0 5%;
 }
 
 .create{
@@ -42,11 +42,25 @@ h3{
     font-weight: 900;
     color: #ffffff;
 }
+  
 
+@media (max-width: 768px){
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .createNew{
+        display: none;
+    }
+
+    .create {
+        width: 115px;
+        margin: 10px 10px;
+      }
+}
 
 @media (max-width: 480px) {
     .create {
-      width: 100%;
       margin: 10px 0;
     }
     

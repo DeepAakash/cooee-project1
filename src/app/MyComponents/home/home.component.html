@@ -30,13 +30,14 @@
       >
         <div class="d-flex align-items-center mr-2 px-2 create">
           <mat-icon routerLink="/create">add </mat-icon>
-          <span routerLink="/create"> Create New Event </span>
+          <span routerLink="/create"> Create </span>
+          <span routerLink="/create" class="createNew">New Event </span>
         </div>
       </div>
     </div>
   </mat-card-header>
 
-  <mat-card-content>
+  <mat-card-content class="table-container">
     <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
       <ng-container matColumnDef="DateTime">
         <th mat-sort-header mat-header-cell *matHeaderCellDef>Date-Time</th>
