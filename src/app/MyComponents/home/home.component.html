@@ -3,7 +3,7 @@
     <div class="container d-flex table-header">
       <!-- For Search Bar -->
       <mat-form-field class="search-input">
-        <input matInput placeholder="Search">
+        <input matInput placeholder="Search" (input)="FilterChange($event)">
       </mat-form-field>
           
 
