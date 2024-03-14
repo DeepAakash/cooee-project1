@@ -23,16 +23,22 @@ h3{
     background-color: #000 !important;
 }
 
-.table-header{
+.table-header {
+    display: flex;
     justify-content: space-between;
-}
-
-.filterByItemName{
-    margin: 0 5%;
-}
-
-.create{
-    width:185px;
+    align-items: center;
+  }
+  
+  .search-input {
+    margin-right: 10px;
+  }
+  
+  .filterByItemName {
+    margin-right: auto;
+  }
+  
+  .create {
+    width: 185px;
     height: 40px;
     border-style: solid;
     border-radius: 30px;
@@ -40,10 +46,10 @@ h3{
     background-color: #f51c8f;
     padding: 16px 22px;
     font-size: 14px;
-    justify-content: center;
     font-weight: 900;
     color: #ffffff;
-}
+  }
+  
   
 
 @media (max-width: 768px){
@@ -57,13 +63,13 @@ h3{
 
     .create {
         width: 115px;
-        margin: 10px 10px;
+        margin: 10px 0px 10px 20px;
       }
 }
 
 @media (max-width: 480px) {
     .create {
-      margin: 10px 0;
+      margin: 10px 0px 10px 20px;
     }
     
     .spacer {

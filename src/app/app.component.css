@@ -9,11 +9,11 @@
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 210px);
+  justify-content: center;
 }
 
-
 .outlet{
-  flex-grow: 1;
+  flex-grow: 0.1;
 }
 
 .footer {
