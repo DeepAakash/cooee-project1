@@ -2,9 +2,10 @@
   <mat-card-header>
     <div class="container d-flex">
       <!-- For Search Bar -->
-      <mat-form-field>
-        <input matInput (keyup)="FilterChange($event)" placeholder="Search" />
+      <mat-form-field class="search-input">
+        <input matInput placeholder="Search">
       </mat-form-field>
+          
 
       <!-- For Filter by Item Name  -->
       <mat-form-field class="filterByItemName">
@@ -19,8 +20,6 @@
           }}</mat-option>
         </mat-select>
       </mat-form-field>
-
-      <span class="spacer"></span>
 
       <!-- For Create New Event Button  -->
       <div
