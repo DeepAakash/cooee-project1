@@ -54,7 +54,7 @@ NOTE: The application will automatically reload if you change any of the source 
 - jwt-decode for decoding JWT tokens.
 
 ## Deployment
-The application is hosted using Vercel. You can visit the deployed version at [Cooee Project-1](https://cooee-project1.vercel.app/).
+The full stack application is hosted using Vercel. You can visit the deployed version at [Cooee Project-1](https://cooee-project1.vercel.app/).
 
 
 ## Future Scope
