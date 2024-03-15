@@ -51,7 +51,7 @@ export class ApiService {
         this.token = res.token;
         if(this.token){
           this.toast.success('Login successful, redirecting now...', '', {
-            timeOut: 1000,
+            timeOut: 1500,
             positionClass: 'toast-top-center'
           }).onHidden.toPromise().then(() => {
             this.jwtToken$.next(this.token);

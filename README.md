@@ -53,6 +53,9 @@ NOTE: The application will automatically reload if you change any of the source 
 - ngx-toastr for displaying user-friendly toast notifications.
 - jwt-decode for decoding JWT tokens.
 
+## Deployment
+The application is hosted using Vercel. You can visit the deployed version at Cooee Project-1.
+
 
 ## Future Scope
 - Implementation of update and delete features on the table
